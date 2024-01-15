@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "mental-health-fb136": {
+      "hosting": {
+        "mental-health-app": [
+          "mental-health-fb136"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "mental-health-fb136"
+  }
+}

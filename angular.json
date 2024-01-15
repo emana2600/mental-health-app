@@ -40,8 +40,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "30mb",
+                  "maximumError": "50mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -94,6 +94,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "mental-health-app:build:production",
+              "serveTarget": "mental-health-app:serve:production"
+            },
+            "development": {
+              "buildTarget": "mental-health-app:build:development",
+              "serveTarget": "mental-health-app:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
