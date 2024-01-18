@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+
 
 @Component({
   selector: 'app-root',
@@ -9,8 +11,8 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
   imports: [
     CommonModule,
     RouterOutlet,
-    AngularFireAuthModule
-
+    AngularFireAuthModule,
+    NzMenuModule
 
   ],
   templateUrl: './app.component.html',
