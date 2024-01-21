@@ -1,11 +1,22 @@
-<ul nzMode="horizontal">
+<div #tabsContainer>
+<ul nz-menu nzMode="horizontal">
     <li nz-menu-item nzMatchRouter>
       <a >Forum</a>
     </li>
     <li nz-menu-item nzMatchRouter>
       <a>Wanna Talk ? </a>
     </li>
+  <li nz-menu-item nzMatchRouter>
+    <a (click)="login()">Login / register</a>
+  </li>
 </ul>
-<div class="big div">
-  <h1>Hello welcome to Though Cloud</h1>
+<div   >
+<nz-tabset [nzTabPosition]="'bottom'" [nzSelectedIndex]="selectedIndex" [nzAnimated]="true" >
+  <nz-tab *ngFor="let tab of tabs"   >
+    <app-tab-one *ngIf="tab==1"></app-tab-one>
+    <app-tab-two *ngIf="tab==2"></app-tab-two>
+
+  </nz-tab>
+</nz-tabset>
+</div>
 </div>
