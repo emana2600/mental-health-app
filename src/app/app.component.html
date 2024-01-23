@@ -10,13 +10,5 @@
     <a (click)="login()">Login / register</a>
   </li>
 </ul>
-<div   >
-<nz-tabset [nzTabPosition]="'bottom'" [nzSelectedIndex]="selectedIndex" [nzAnimated]="true" >
-  <nz-tab *ngFor="let tab of tabs"   >
-    <app-tab-one *ngIf="tab==1"></app-tab-one>
-    <app-tab-two *ngIf="tab==2"></app-tab-two>
-
-  </nz-tab>
-</nz-tabset>
-</div>
+<div class="container"><router-outlet></router-outlet></div>
 </div>

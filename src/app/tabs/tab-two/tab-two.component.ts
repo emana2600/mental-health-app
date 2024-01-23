@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import {NzButtonComponent} from "ng-zorro-antd/button";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-tab-two',
@@ -11,5 +12,11 @@ import {NzButtonComponent} from "ng-zorro-antd/button";
 
 })
 export class TabTwoComponent {
-
+  constructor(private authService : AuthService) {
+  }
+  login(){
+    this.authService.googleLogin().then(userdata=>{
+      console.log(userdata)
+    });
+  }
 }
