@@ -1,7 +1,9 @@
 <div class="element">
 
-  <span [@pulse]="'highlighted'"  class="icon-element" nz-icon nzType="left" nzTheme="outline" (click)="slideLeft()"></span>
-  <nz-tabset [nzTabPosition]="'bottom'" [nzSelectedIndex]="selectedIndex" [nzAnimated]="true" >
+  @if (selectedIndex != 0){
+    <span [@pulse]="'highlighted'"  class="icon-element" nz-icon nzType="left" nzTheme="outline" (click)="slideLeft()"></span>
+  }
+  <nz-tabset  [nzTabPosition]="'bottom'" [nzSelectedIndex]="selectedIndex" [nzAnimated]="true" >
     <nz-tab *ngFor="let tab of tabs"   #nzTabsElements>
       <app-tab-one *ngIf="tab==1"></app-tab-one>
       <app-tab-two *ngIf="tab==2"></app-tab-two>
@@ -9,5 +11,7 @@
 
     </nz-tab>
   </nz-tabset>
-  <span [@pulse]="'highlighted'"  class="icon-element"  nz-icon nzType="right" nzTheme="outline" (click)="slideRight()"></span>
+  @if(selectedIndex < ( tabs.length -1)){
+    <span [@pulse]="'highlighted'"  class="icon-element"  nz-icon nzType="right" nzTheme="outline" (click)="slideRight()"></span>
+  }
 </div>

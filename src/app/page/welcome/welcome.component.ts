@@ -5,7 +5,7 @@ import { TabOneComponent} from "../../tabs/tab-one/tab-one.component";
 import { TabTwoComponent} from "../../tabs/tab-two/tab-two.component";
 import { NavigationEnd, Router} from "@angular/router";
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import {trigger, state, style, animate, keyframes, transition} from '@angular/animations';
+import {trigger, state, style, animate, transition} from '@angular/animations';
 import {TabThreeComponent} from "../../tabs/tab-three/tab-three.component";
 
 
@@ -97,7 +97,6 @@ export class WelcomeComponent implements AfterViewInit, OnDestroy {
     this.selectedIndex = Math.min(this.tabs.length - 1, this.selectedIndex + 1);
   }
   private removeEventListener() {
-
     for (let [key, value] of this.eventListeners.entries()) {
       if (value) {
         // @ts-ignore
@@ -107,6 +106,5 @@ export class WelcomeComponent implements AfterViewInit, OnDestroy {
 
       }
     }
-
   }
 }
