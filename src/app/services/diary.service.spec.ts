@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { StartInfoService } from './start-info.service';
+import { DiaryService } from './diary.service';
 
-describe('StartInfoService', () => {
-  let service: StartInfoService;
+describe('DiaryService', () => {
+  let service: DiaryService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(StartInfoService);
+    service = TestBed.inject(DiaryService);
   });
 
   it('should be created', () => {

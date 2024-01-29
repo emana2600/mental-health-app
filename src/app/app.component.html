@@ -1,14 +1,37 @@
 <div #tabsContainer>
-<ul nz-menu nzMode="horizontal">
+  <ul nz-menu nzMode="horizontal">
     <li nz-menu-item nzMatchRouter>
-      <a >Forum</a>
+      <a routerLink="">Home</a>
+    </li>
+    <li nz-menu-item nzMatchRouter>
+      <a routerLink="forum">Forum</a>
     </li>
     <li nz-menu-item nzMatchRouter>
       <a>Wanna Talk ? </a>
     </li>
-  <li nz-menu-item nzMatchRouter>
-    <a (click)="login()">Login / register</a>
-  </li>
-</ul>
-<div class="container"><router-outlet></router-outlet></div>
+    <li nz-menu-item nzMatchRouter>
+      <a routerLink="journal">Journal</a>
+    </li>
+    <li nz-menu-item nzMatchRouter>
+      <a (click)="login()">Login / register</a>
+    </li>
+  </ul>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  <!--  <div id="floating-message" nzPopoverTitle="Title" [nzPopoverContent]="contentTemplate" [nzPopoverPlacement]="position" nz-popover [nzPopoverVisible]="isPoppoverVisible" nzPopoverTrigger="click" >-->
+  <!--    <img [src]="catSourcePath" width="5%" height="auto" class="cat-image" alt="cat image for message" >-->
+  <!--  </div>-->
+
 </div>
+<div id="floatingMessage" #floatingMessage>
+  <button  nz-button nzType="text" nz-popover [nzPopoverContent]="contentTemplate"
+          [nzPopoverVisible]='isPoppoverVisible'>
+    <img [src]="catSourcePath" width="40vh" height="auto" class="cat-image" alt="cat image for message">
+  </button>
+</div>
+<ng-template #contentTemplate>
+  <div>
+    {{ randomMessage }}
+  </div>
+</ng-template>

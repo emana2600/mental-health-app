@@ -1,0 +1,42 @@
+.-title {
+  font-size: 8vh;
+  font-family: pacifico, serif;
+  color: deeppink;
+}
+.questions {
+  font-size: 3vh;
+  font-family: pacifico, serif;
+  color: darkslateblue;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center; /* Center children vertically */
+  height: 90vh;
+}
+.desc-image {
+  margin-right: 7%;
+}
+.desc-container{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items: center; /* Center children vertically */
+  height: 10vh;
+  width: 100%;
+}
+.desc-container button {
+  height: fit-content;
+  color: #1d39c4;
+  font-weight: bold;
+  background-color: #a6c2da;
+  margin-right: 1%;
+}
+.desc-container button:hover {
+  height: fit-content;
+  color: #6f7cba;
+  font-weight: bold;
+}
