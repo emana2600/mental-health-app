@@ -2,7 +2,7 @@
   <h1>Welcome to your talking diary</h1>
   <h3>Whenever you write something in your diary the diary will talk to you</h3>
   @for (message of messages;track message.id){
-    <nz-card [id]="message.id" nzType="inner" [nzTitle]="message.role" >
+    <nz-card  [id]="message.id" nzType="inner" [nzTitle]="message.role" >
       <a>{{message.content}}</a>
     </nz-card>
   }

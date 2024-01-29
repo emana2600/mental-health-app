@@ -1,11 +1,11 @@
 .-title {
   font-size: 8vh;
-  font-family: pacifico, serif;
-  color: deeppink;
+  font-family: poppins, serif;
+  color: #1a3471;
 }
 .questions {
   font-size: 3vh;
-  font-family: pacifico, serif;
+  font-family: poppins, serif;
   color: darkslateblue;
 
 }
@@ -39,4 +39,8 @@
   height: fit-content;
   color: #6f7cba;
   font-weight: bold;
+}
+.buttons-choose {
+  border-radius: 7%;
+  box-shadow: rgba(128, 128, 128, 0.1) 2px 2px;
 }

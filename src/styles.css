@@ -6,3 +6,7 @@ body {
   font-family: 'pacifico';
   src: url('assets/fonts/Pacifico-Regular.ttf');
 }
+@font-face {
+  font-family: 'poppins';
+  src: url("assets/fonts/poppins-Regular.ttf");
+}

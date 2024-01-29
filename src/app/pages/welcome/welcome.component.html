@@ -2,20 +2,28 @@
   <div class="-title">HI !!!</div>
   <div class="questions">How can i help you with ?</div>
   <div class="desc-container">
-    <button nz-button nzType="dashed" >
-      <img src="assets/images/anxiety.png" width="25vh" height="30vh" class="desc-image" alt="anxious woman"> Anxiety
+    <a routerLink="anxiety">
+      <button class="buttons-choose" nz-button nzType="dashed" (click)="showArticle(0)">
+        <img src="assets/images/anxiety.png" width="25vh" height="30vh" class="desc-image" alt="anxious woman"> Anxiety
+      </button>
+    </a>
+    <button class="buttons-choose" nz-button nzType="dashed">
+      <img src="assets/images/depression.png" width="25vh" height="30vh" class="desc-image" alt="anxious woman">
+      Depression
     </button>
-    <button nz-button nzType="dashed" >
-      <img src="assets/images/depression.png" width="25vh" height="30vh" class="desc-image" alt="anxious woman"> Depression
+    <button class="buttons-choose" nz-button nzType="dashed">
+      <img src="assets/images/sleep-issue.png" width="25vh" height="30vh" class="desc-image" alt="anxious woman">
+      Sleeping Problem
     </button>
-    <button nz-button nzType="dashed" >
-      <img src="assets/images/sleep-issue.png" width="25vh" height="30vh" class="desc-image" alt="anxious woman"> Sleeping Problem
-    </button>
-    <button nz-button nzType="dashed" >
+    <button class="buttons-choose" nz-button nzType="dashed">
       <img src="assets/images/journal.png" width="25vh" height="30vh" class="desc-image" alt="anxious woman"> Journal
     </button>
-    <button nz-button nzType="dashed" >
-      <img src="assets/images/psycho.png" width="25vh" height="30vh" class="desc-image" alt="anxious woman"> Pass a test
-    </button>
+
+
   </div>
+  @if (subject != undefined) {
+    <nz-card style="width:300px;" [nzTitle]="subject.title">
+      {{ subject.content }}
+    </nz-card>
+  }
 </div>
