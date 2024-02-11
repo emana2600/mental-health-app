@@ -1,14 +1,14 @@
 {
   "targets": {
-    "mental-health-fb136": {
+    "though-cloud": {
       "hosting": {
-        "mental-health-app": [
-          "mental-health-fb136"
+        "though-cloud": [
+          "though-cloud"
         ]
       }
     }
   },
   "projects": {
-    "default": "mental-health-fb136"
+    "default": "though-cloud"
   }
 }

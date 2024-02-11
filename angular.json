@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mental-health-app": {
+    "though-cloud": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/mental-health-app",
+            "outputPath": "dist/though-cloud",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -30,9 +30,6 @@
               }
             ],
             "styles": [
-              {
-                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
-              },
               "src/theme.less",
               "src/styles.css"
             ],
@@ -43,8 +40,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "30mb",
-                  "maximumError": "50mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -66,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "mental-health-app:build:production"
+              "buildTarget": "though-cloud:build:production"
             },
             "development": {
-              "buildTarget": "mental-health-app:build:development"
+              "buildTarget": "though-cloud:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "mental-health-app:build"
+            "buildTarget": "though-cloud:build"
           }
         },
         "test": {
@@ -93,9 +90,6 @@
               "src/assets"
             ],
             "styles": [
-              {
-                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
-              },
               "src/styles.css"
             ],
             "scripts": []
@@ -108,12 +102,12 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "mental-health-app:build:production",
-              "serveTarget": "mental-health-app:serve:production"
+              "buildTarget": "though-cloud:build:production",
+              "serveTarget": "though-cloud:serve:production"
             },
             "development": {
-              "buildTarget": "mental-health-app:build:development",
-              "serveTarget": "mental-health-app:serve:development"
+              "buildTarget": "though-cloud:build:development",
+              "serveTarget": "though-cloud:serve:development"
             }
           },
           "defaultConfiguration": "production"
@@ -122,6 +116,6 @@
     }
   },
   "cli": {
-    "analytics": "e1aba72c-a51a-4d37-9602-2b1d8a67a037"
+    "analytics": false
   }
 }
