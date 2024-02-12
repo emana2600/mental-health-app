@@ -4,11 +4,13 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import {FormsModule} from "@angular/forms";
 import { NzCardModule } from 'ng-zorro-antd/card';
 import {Dialog} from "../../model/dialog";
+import { NzIconModule } from 'ng-zorro-antd/icon';
+
 
 @Component({
   selector: 'app-journal',
   standalone: true,
-  imports: [NzInputModule, FormsModule,NzCardModule],
+  imports: [NzInputModule, FormsModule,NzCardModule,NzIconModule],
   templateUrl: './journal.component.html',
   styleUrl: './journal.component.css'
 })
