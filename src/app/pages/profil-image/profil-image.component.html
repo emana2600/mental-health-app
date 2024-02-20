@@ -1,0 +1,8 @@
+<div class="container">@for (image of imageList;track image;let index = $index) {
+    @if (index % 4 == 0) {
+        <br/>
+    }
+    <div class="outside-container-image" (click)="selectImage(image.name)">
+        <div class="image-container"><span class="cat-images-ele"><img [src]="image.url" [alt]="'cat image num'" class="cat-images-ele"></span></div>
+    </div>
+}</div>

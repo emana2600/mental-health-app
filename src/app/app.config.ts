@@ -11,6 +11,9 @@ import {provideAnimations} from '@angular/platform-browser/animations';
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import { NzMessageModule } from 'ng-zorro-antd/message';
+
 
 registerLocaleData(en);
 
@@ -27,5 +30,7 @@ export const appConfig: ApplicationConfig = {
     }),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    AngularFireStorageModule,
+    NzMessageModule
   ]), importProvidersFrom(HttpClientModule), provideAnimations()]
 };

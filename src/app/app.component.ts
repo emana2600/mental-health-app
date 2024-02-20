@@ -11,6 +11,7 @@ import { NzPopoverModule } from 'ng-zorro-antd/popover';
 import {pickRandomCatImage} from "../data/cat-image";
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import {MESSAGE_LIST} from "../data/message-list";
+import { NzSpinModule } from 'ng-zorro-antd/spin';
 
 
 
@@ -29,7 +30,8 @@ import {MESSAGE_LIST} from "../data/message-list";
     NzPopoverModule,
     NgOptimizedImage,
     NzButtonModule,
-    RouterLink
+    RouterLink,
+    NzSpinModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -44,10 +46,22 @@ export class AppComponent implements AfterViewInit{
   message  = "no messsage";
   isPoppoverVisible= false;
   poppoverShown =false;
+  loaded = false
+  interval  : number = 0
   @ViewChild('floatingMessage') floatingMessage: ElementRef
-  constructor(private auth: AuthService) {
-    this.isLoggedIn = this.auth.isLoggedIn();
-
+  constructor(public auth: AuthService) {
+    this.interval = setInterval(x=>{
+      if(this.auth.loaded){
+        this.isLoggedIn = this.auth.isLoggedIn();
+        setTimeout(x => {
+          if (this.isLoggedIn) {
+            this.auth.getProfil()
+          }
+        }, 1000)
+        clearInterval(this.interval)
+        this.loaded =true
+      }
+    },100)
 
   }
   randomMessage = MESSAGE_LIST[Math.floor(Math.random() * MESSAGE_LIST.length)];
@@ -89,8 +103,12 @@ updateMessageAndPosition(){
 
   async login() {
     if (this.isLoggedIn) {
+      console.log("called signout")
       await this.auth.SignOut();
+      this.isLoggedIn =false
     } else {
+      console.log("called google")
+
       this.user = await this.auth.googleLogin();
       this.isLoggedIn = !!this.user
     }

@@ -1,28 +1,76 @@
+<!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;  <h1>Welcome to your talking diary</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;  <h3>Whenever you write something in your diary the diary will talk to you</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;  @for (message of messages;track message.id){&ndash;&gt;-->
+<!--&lt;!&ndash;    <nz-card  [id]="message.id" nzType="inner" [nzTitle]="message.role" >&ndash;&gt;-->
+<!--&lt;!&ndash;      <a>{{message.content}}</a>&ndash;&gt;-->
+<!--&lt;!&ndash;    </nz-card>&ndash;&gt;-->
+<!--&lt;!&ndash;  }&ndash;&gt;-->
+<!--&lt;!&ndash;  <textarea nz-input placeholder="Tell me how you feel today" [nzAutosize]="{ minRows: 3, maxRows: 5 }" [(ngModel)]="message" ></textarea>&ndash;&gt;-->
+<!--&lt;!&ndash;  <button (click)="sendMessage()">Send</button>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
 <!--<div class="container">-->
-<!--  <h1>Welcome to your talking diary</h1>-->
-<!--  <h3>Whenever you write something in your diary the diary will talk to you</h3>-->
-<!--  @for (message of messages;track message.id){-->
-<!--    <nz-card  [id]="message.id" nzType="inner" [nzTitle]="message.role" >-->
-<!--      <a>{{message.content}}</a>-->
-<!--    </nz-card>-->
-<!--  }-->
-<!--  <textarea nz-input placeholder="Tell me how you feel today" [nzAutosize]="{ minRows: 3, maxRows: 5 }" [(ngModel)]="message" ></textarea>-->
-<!--  <button (click)="sendMessage()">Send</button>-->
+<!--    <ul class="chat-thread" appProfilDirective>-->
+<!--        @for (message of messages;track message.id) {-->
+<!--            @if (imgUrl) {-->
+<!--                <li [id]="message.id" [ngStyle]="" [class]="message.role"-->
+<!--                    [innerHTML]="message.content | domSanitizer">-->
+<!--                </li>-->
+<!--            }-->
+<!--        }-->
+
+<!--    </ul>-->
+
+<!--    <form class="chat-window">-->
+<!--        <textarea class="chat-window-message" name="chat-window-message" autocomplete="off" autofocus rows="2"-->
+<!--                  [(ngModel)]="message"></textarea>-->
+<!--        <button class="send&#45;&#45;button" (click)="sendMessage()">Send <span nz-icon nzType="send" nzTheme="outline"></span>-->
+<!--        </button>-->
+<!--    </form>-->
 <!--</div>-->
-<div class="container">
-<ul class="chat-thread">
-  @for (message of messages;track message.id){
-        <li [id]="message.id"  [class]="message.role" >
-          {{message.content}}
-        </li>
-      }
+<!--&lt;!&ndash; partial &ndash;&gt;-->
+<!--<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
+<!--<script src="./script.js"></script>-->
+<h2>Ai Diary <br/> Chat Interface</h2>
+<div class="chat-container">
+    <ul class="chat">
+        @for (message of messages;track message.id) {
 
-</ul>
-
-<form class="chat-window">
-  <textarea class="chat-window-message" name="chat-window-message" autocomplete="off" autofocus rows="2" [(ngModel)]="message"></textarea >
-  <button class="send--button" (click)="sendMessage()">Send <span nz-icon nzType="send" nzTheme="outline"></span></button>
-</form>
+            @if (imgUrl) {
+                <li  [id]="message.id" [class]="message.role == 'assistant'? 'message left' : 'message right' ">
+                    <img class="logo"
+                         [src]="message.role == 'assistant'? 'https://firebasestorage.googleapis.com/v0/b/though-cloud.appspot.com/o/cats%2Fchat_ai.png?alt=media&token=fb801373-33a1-476a-adcc-152b003203d7' : imgUrl "
+                         alt="image user">
+                    <p [innerHTML]="message.content | domSanitizer"></p>
+                </li>
+<!--                <li class="message right">-->
+<!--                    <img class="logo" src="https://randomuser.me/api/portraits/men/67.jpg" alt="">-->
+<!--                    <p>Hi hungry, nice to meet you. I'm Dad.</p>-->
+<!--                </li>-->
+<!--                <li class="message left">-->
+<!--                    <img class="logo"-->
+<!--                         src="https://firebasestorage.googleapis.com/v0/b/though-cloud.appspot.com/o/cats%2Fchat_ai.png?alt=media&token=fb801373-33a1-476a-adcc-152b003203d7"-->
+<!--                         alt="">-->
+<!--                    <p>DAD! I'm serious!</p>-->
+<!--                </li>-->
+<!--                <li class="message right">-->
+<!--                    <img class="logo" src="https://randomuser.me/api/portraits/men/67.jpg" alt="">-->
+<!--                    <p>I thought your name was hungry...?</p>-->
+<!--                </li>-->
+<!--                <li class="message left">-->
+<!--                    <img class="logo"-->
+<!--                         src="https://firebasestorage.googleapis.com/v0/b/though-cloud.appspot.com/o/cats%2Fchat_ai.png?alt=media&token=fb801373-33a1-476a-adcc-152b003203d7"-->
+<!--                         alt="">-->
+<!--                    <p>ARE YOU KIDDING ME?</p>-->
+<!--                </li>-->
+<!--                <li class="message right">-->
+<!--                    <img class="logo" src="https://randomuser.me/api/portraits/men/67.jpg" alt="">-->
+<!--                    <p>No, I'm Dad...</p>-->
+<!--                </li>-->
+            }
+        }
+    </ul>
+    <div class="text_input-area" ><input class="text-input" [(ngModel)]="message" (keydown)="showMessage($event)" type="text"  placeholder="Write here ..."/><span style="font-size: 40px" nz-icon nzType="send" nzTheme="outline"></span>
+    </div>
 </div>
-<!-- partial -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+
