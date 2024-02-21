@@ -1,29 +1,57 @@
 <div class="container">
-  <div class="-title">Hi !!!</div>
-  <div class="questions">How can i help you with ?</div>
-  <div class="desc-container">
+    <div class="-title">Learn about :</div>
     <a routerLink="anxiety">
-      <button class="buttons-choose" nz-button nzType="dashed" (click)="showArticle(0)">
-        <img src="assets/images/anxiety.png" width="25vh" height="30vh" class="desc-image" alt="anxious woman"> Anxiety
-      </button>
+        <button class="buttons-choose" nz-button nzType="dashed" (click)="showArticle(0)">
+            <img src="assets/images/anxiety.png" class="desc-image" alt="anxious woman">
+            Anxiety
+        </button>
     </a>
     <button class="buttons-choose" nz-button nzType="dashed">
-      <img src="assets/images/depression.png" width="25vh" height="30vh" class="desc-image" alt="anxious woman">
-      Depression
+        <img src="assets/images/depression.png" class="desc-image" alt="anxious woman">
+        Depression
+    </button>
+
+    <button class="buttons-choose" nz-button nzType="dashed">
+        <img src="assets/images/stress.png" class="desc-image" alt="anxious woman">
+        Stress
     </button>
     <button class="buttons-choose" nz-button nzType="dashed">
-      <img src="assets/images/sleep-issue.png" width="25vh" height="30vh" class="desc-image" alt="anxious woman">
-      Sleeping Problem
+        <img src="assets/images/ocd.png" class="desc-image" alt="anxious woman">
+        Obsessive compulsive disorder
+    </button>
+
+    <button class="buttons-choose" nz-button nzType="dashed">
+        <img src="assets/images/music.png" class="desc-image" alt="anxious woman">
+        Music And Mental Well-being
     </button>
     <button class="buttons-choose" nz-button nzType="dashed">
-      <img src="assets/images/journal.png" width="25vh" height="30vh" class="desc-image" alt="anxious woman"> Journal
+        <img src="assets/images/games.png" class="desc-image" alt="anxious woman">
+        Games And Mental Well-being
     </button>
 
 
-  </div>
-  @if (subject != undefined) {
-    <nz-card style="width:300px;" [nzTitle]="subject.title">
-      {{ subject.content }}
-    </nz-card>
-  }
+
+    <button class="buttons-choose" nz-button nzType="dashed">
+        <img src="assets/images/sleep-issue.png" class="desc-image" alt="anxious woman">
+        Insomnia
+    </button>
+    <button class="buttons-choose" nz-button nzType="dashed">
+        <img src="assets/images/mindfullness.png"  class="desc-image" alt="anxious woman">
+        Mindfullness
+    </button>
+    <button class="buttons-choose" nz-button nzType="dashed">
+        <img src="assets/images/eating.png" class="desc-image" alt="anxious woman">
+        Eating Disorders
+    </button>
+
+<!--    <button class="buttons-choose" nz-button nzType="dashed">-->
+<!--        <img src="assets/images/journal.png" width="25vw" height="30vh" class="desc-image" alt="anxious woman"> Journal-->
+<!--    </button>-->
+
+
+    @if (subject != undefined) {
+        <nz-card style="width:300px;" [nzTitle]="subject.title">
+            {{ subject.content }}
+        </nz-card>
+    }
 </div>

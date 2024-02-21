@@ -14,6 +14,9 @@ h2 {
   text-transform: uppercase;
   text-align: center;
 }
+.send-icon {
+  cursor: pointer;
+}
 
 .chat-container {
   background-color: #6060ae;
@@ -22,10 +25,13 @@ h2 {
   overflow: hidden;
   padding: 15px;
   position: relative;
-  width: 60%;
+  width: 70%;
+  min-width: 70%;
+  max-width: 100%;
   margin-left: 20%;
   margin-top: 5%;
-  height: 80%;
+
+  height: 85%;
 }
 
 .chat {
@@ -35,10 +41,12 @@ h2 {
   align-items: flex-start;
   list-style-type: none;
   padding: 0;
-  margin-bottom: 4vh;
-  margin-top: 4vh;
+  margin-bottom: 8vh;
+  margin-top: 2vh;
   height: 60vh;
-  overflow: auto;
+  overflow: scroll;
+  scrollbar-color: blue cornflowerblue;
+  scrollbar-width: none;
 }
 
 .message {
@@ -83,20 +91,26 @@ h2 {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 10px 15px;
+  padding: 5px 8px;
   width: 100%;
   display: flex;
   justify-content:center;
   align-items: center;
   margin-bottom: 2%;
+
 }
 .text-input {
-  font-size: 40px;
+  font-size: 20px;
   width: 90%;
-  border-radius: 10px;
+  border-radius: 20px;
   margin-right: 2%;
   color: #1a3471;
+  background-color: #8cc8ff;
 
+}
+.text-input::placeholder {
+  color: #1a3471;
+  opacity: 0.8; /* Firefox */
 }
 
 footer {

@@ -1,5 +1,5 @@
 .-title {
-  font-size: 8vh;
+  font-size: 4vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #1a3471;
 }
@@ -19,10 +19,12 @@
 }
 .desc-image {
   margin-right: 7%;
+  width: 5%;
+  height: auto;
 }
 .desc-container{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content:center;
   align-items: center; /* Center children vertically */
   height: 10vh;
@@ -41,6 +43,10 @@
   font-weight: bold;
 }
 .buttons-choose {
-  border-radius: 7%;
+  border-radius: 10px;
+  font-size: 2vw;
   box-shadow: rgba(128, 128, 128, 0.1) 2px 2px;
+  width: 70vw;
+  height: 8vh;
+  margin-top: 1vh;
 }
