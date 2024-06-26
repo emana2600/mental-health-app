@@ -90,7 +90,7 @@ updateMessageAndPosition(){
       console.log("triggered")
 
       this.triggerInterval();
-    }, 1200000)
+    }, 600000)
   }
   getRandomPosition() {
     const width = window.innerWidth;
